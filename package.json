@@ -1,0 +1,15 @@
+{
+  "name": "gcal-cors-proxy",
+  "version": "1.0.0",
+  "description": "Proxy for private gcal links",
+  "main": "index.js",
+  "repository": "https://github.com/rdjpalmer/gcal-cors-proxy",
+  "author": "Richard Palmer <rich@rdjpalmer.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@vercel/node": "^1.12.1"
+  },
+  "dependencies": {
+    "node-ical": "^0.14.1"
+  }
+}
