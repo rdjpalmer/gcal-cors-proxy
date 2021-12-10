@@ -35,7 +35,7 @@ const fn = async (request: VercelRequest, response: VercelResponse) => {
 
     const data = await ical.fromURL(url);
 
-    response.status(200).send(data);
+    response.status(200).json(data);
   } catch (error) {
     response.status(500).send(error.message);
   }
