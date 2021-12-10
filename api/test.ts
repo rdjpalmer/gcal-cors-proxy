@@ -1,4 +1,4 @@
-import * as ical from "node-ical";
+import * as fs from "fs/promises";
 import * as path from "path";
 import { VercelRequest, VercelResponse } from "@vercel/node";
 
@@ -22,9 +22,11 @@ const allowCors = (fn) => async (req, res) => {
 
 const fn = async (request: VercelRequest, response: VercelResponse) => {
   try {
-    const data = await ical.parseFile(path.resolve("./testevent.ics"));
+    const data = await fs.readFile(path.resolve("./testevent.ics"), {
+      encoding: "utf-8",
+    });
 
-    response.status(200).json(data);
+    response.status(200).send(data);
   } catch (error) {
     response.status(500).send(error.message);
   }
